@@ -20,6 +20,7 @@ namespace HotelSelect.Dao.repository
                 _instance = new DbConnector();
             }
             return _instance;
+            
         }
 
         public SqlConnection GetConnection()
