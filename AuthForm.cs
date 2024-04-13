@@ -16,6 +16,9 @@ namespace HotelSelect
         public AuthForm()
         {
             InitializeComponent();
+            
+            
+            
         }
     }
 }
