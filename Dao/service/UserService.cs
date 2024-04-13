@@ -25,6 +25,8 @@ namespace HotelSelect.Dao.service
             if (user.CheckFieldsOnNullOrEmpty())
             {
                 userDao.SaveUser(user);
+
+                Console.WriteLine("hehehehhe");
             }
             else
             {
