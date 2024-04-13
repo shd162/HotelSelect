@@ -43,6 +43,13 @@ namespace HotelSelect.Dao.impl
             saveUserCommand.Parameters.Add("@city_id", System.Data.SqlDbType.BigInt).Value = user.CityId;
 
 
+
+
+
+
+
+
+
             try
             {
                 dbConnector.Open();
