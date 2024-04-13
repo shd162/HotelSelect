@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelSelect.Entity
 {
-    internal class User
+    public class User
     {
         private long id;
         private string firstName;
@@ -18,109 +18,93 @@ namespace HotelSelect.Entity
         private string email;
         private long countryId;
         private long cityId;
-        public long GetId()
+
+
+        public User()
         {
-            return id;
         }
 
-        public void SetId(long value)
+        public User(long id, string firstName, string lastName, DateTime age, string login, string password, string phoneNumber, string email, long countryId, long cityId)
         {
-            id = value;
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.login = login;
+            this.password = password;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.countryId = countryId;
+            this.cityId = cityId;
         }
 
-
-        public string GetFirstName()
+        public long Id
         {
-            return firstName;
+            get => id;
+            set => id = value;
         }
 
-        public void SetFirstName(string value)
+        public string FirstName
         {
-            firstName = value;
+            get => firstName;
+            set => firstName = value;
         }
 
-
-
-        public string GetLastName()
+        public string LastName
         {
-            return lastName;
+            get => lastName;
+            set => lastName = value;
         }
 
-        public void SetLastName(string value)
+        public DateTime Age
         {
-            lastName = value;
+            get => age;
+            set => age = value;
         }
 
-
-        public DateTime GetAge()
+        public string Login
         {
-            return age;
+            get => login;
+            set => login = value;
         }
 
-        public void SetAge(DateTime value)
+        public string Password
         {
-            age = value;
+            get => password;
+            set => password = value;
         }
 
-        public string GetLogin()
+        public string PhoneNumber
         {
-            return login;
+            get => phoneNumber;
+            set => phoneNumber = value;
         }
 
-        public void SetLogin(string value)
+        public string Email
         {
-            login = value;
+            get => email;
+            set => email = value;
         }
 
-        public string GetPassword()
+        public long CountryId
         {
-            return password;
+            get => countryId;
+            set => countryId = value;
         }
 
-        public void SetPassword(string value)
+        public long CityId
         {
-            password = value;
+            get => cityId;
+            set => cityId = value;
         }
 
-        public string GetPhoneNumber()
+        public bool CheckFieldsOnNullOrEmpty()
         {
-            return phoneNumber;
-        }
-
-        public void SetPhoneNumber(string value)
-        {
-            phoneNumber = value;
-        }
-
-
-        public string GetEmail()
-        {
-            return email;
-        }
-
-        public void SetEmail(string value)
-        {
-            email = value;
-        }
-
-        public long GetCountryId()
-        {
-            return countryId;
-        }
-
-        public void SetCountryId(long value)
-        {
-            countryId = value;
-        }
-
-        public long GetCityId()
-        {
-            return cityId;
-        }
-
-        public void SetCityId(long value)
-        {
-            cityId = value;
+            return !(String.IsNullOrEmpty(FirstName)
+                || String.IsNullOrEmpty(LastName)
+                || String.IsNullOrEmpty(login)
+                || String.IsNullOrEmpty(password)
+                );
         }
     }
 }

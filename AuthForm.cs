@@ -16,9 +16,13 @@ namespace HotelSelect
         public AuthForm()
         {
             InitializeComponent();
-            
-            
-            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegForm rf = new RegForm();
+            rf.Show();
         }
     }
 }

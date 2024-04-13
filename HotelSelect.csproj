@@ -53,7 +53,10 @@
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dao\impl\UserDaoImpl.cs" />
-    <Compile Include="Dao\inreface\UserDao.cs" />
+    <Compile Include="Dao\inreface\IRoleDao.cs" />
+    <Compile Include="Dao\inreface\IUserDao.cs" />
+    <Compile Include="Dao\repository\DbConnector.cs" />
+    <Compile Include="Dao\service\UserService.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,7 +96,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dao\service\" />
     <Folder Include="Security\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
