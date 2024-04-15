@@ -4,7 +4,7 @@ namespace HotelSelect.Dao.inreface
 {
     internal interface IUserDao
     {
-        User FindUserByLoginAndPassword(string login, string password);
+        User FindUserByLoginAndPassword(User user);
         User FindUserById(long id);
         void SaveUser(User user);
     }

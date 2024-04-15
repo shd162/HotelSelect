@@ -10,9 +10,9 @@ namespace HotelSelect.Dao.service
     {
         private IUserDao userDao = new UserDaoImpl();
         
-        public User FindUserByLoginAndPassword(string login, string password)
+        public User FindUserByLoginAndPassword(User user)
         {
-            return null;
+            return userDao.FindUserByLoginAndPassword(user);
         }
 
         public User FindUserById(long id)
