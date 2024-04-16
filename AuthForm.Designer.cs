@@ -42,7 +42,7 @@
             // 
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login.Location = new System.Drawing.Point(129, 142);
-            this.login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.login.Margin = new System.Windows.Forms.Padding(4);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(280, 34);
             this.login.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.password.Location = new System.Drawing.Point(129, 215);
-            this.password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.password.Margin = new System.Windows.Forms.Padding(4);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(280, 34);
@@ -64,7 +64,7 @@
             this.authBtn.BackColor = System.Drawing.Color.Teal;
             this.authBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.authBtn.Location = new System.Drawing.Point(171, 283);
-            this.authBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.authBtn.Margin = new System.Windows.Forms.Padding(4);
             this.authBtn.Name = "authBtn";
             this.authBtn.Size = new System.Drawing.Size(191, 50);
             this.authBtn.TabIndex = 2;
@@ -101,7 +101,7 @@
             this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(171, 367);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 50);
             this.button1.TabIndex = 5;
@@ -147,7 +147,7 @@
             this.Controls.Add(this.authBtn);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AuthForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuthForm";
