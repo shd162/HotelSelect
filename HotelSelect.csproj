@@ -66,6 +66,12 @@
     <Compile Include="RegForm.Designer.cs">
       <DependentUpon>RegForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reserv.Designer.cs">
+      <DependentUpon>Reserv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Security\Security.cs" />
     <Compile Include="Security\UserSession.cs" />
     <EmbeddedResource Include="AuthForm.resx">
@@ -82,6 +88,9 @@
     </Compile>
     <EmbeddedResource Include="RegForm.resx">
       <DependentUpon>RegForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reserv.resx">
+      <DependentUpon>Reserv.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dataBase\database.bacpac" />
     <None Include="Properties\Settings.settings">
