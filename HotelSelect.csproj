@@ -132,7 +132,6 @@
     <EmbeddedResource Include="Reserv.resx">
       <DependentUpon>Reserv.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="dataBase\database.bacpac" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,7 +146,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="dataBase\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Creat Hotel.jpg" />
     <Content Include="Images\eye-visible.png" />
