@@ -57,7 +57,7 @@
             // 
             this.firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.firstName.Location = new System.Drawing.Point(43, 54);
-            this.firstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstName.Margin = new System.Windows.Forms.Padding(4);
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(337, 30);
             this.firstName.TabIndex = 0;
@@ -88,7 +88,7 @@
             // 
             this.lastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lastName.Location = new System.Drawing.Point(43, 121);
-            this.lastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lastName.Margin = new System.Windows.Forms.Padding(4);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(337, 30);
             this.lastName.TabIndex = 8;
@@ -119,7 +119,7 @@
             // 
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login.Location = new System.Drawing.Point(556, 54);
-            this.login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.login.Margin = new System.Windows.Forms.Padding(4);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(337, 30);
             this.login.TabIndex = 12;
@@ -139,7 +139,7 @@
             // 
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.password.Location = new System.Drawing.Point(556, 121);
-            this.password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.password.Margin = new System.Windows.Forms.Padding(4);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(337, 30);
             this.password.TabIndex = 14;
@@ -159,7 +159,7 @@
             // 
             this.phoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.phoneNumber.Location = new System.Drawing.Point(556, 186);
-            this.phoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.phoneNumber.Name = "phoneNumber";
             this.phoneNumber.Size = new System.Drawing.Size(337, 30);
             this.phoneNumber.TabIndex = 16;
@@ -179,7 +179,7 @@
             // 
             this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.email.Location = new System.Drawing.Point(556, 257);
-            this.email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.email.Margin = new System.Windows.Forms.Padding(4);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(337, 30);
             this.email.TabIndex = 18;
@@ -188,7 +188,7 @@
             // 
             this.birthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.birthDay.Location = new System.Drawing.Point(43, 182);
-            this.birthDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.birthDay.Margin = new System.Windows.Forms.Padding(4);
             this.birthDay.Name = "birthDay";
             this.birthDay.Size = new System.Drawing.Size(337, 30);
             this.birthDay.TabIndex = 20;
@@ -208,7 +208,7 @@
             // 
             this.country.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.country.Location = new System.Drawing.Point(556, 337);
-            this.country.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.country.Margin = new System.Windows.Forms.Padding(4);
             this.country.Name = "country";
             this.country.Size = new System.Drawing.Size(337, 30);
             this.country.TabIndex = 21;
@@ -228,7 +228,7 @@
             // 
             this.city.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.city.Location = new System.Drawing.Point(556, 410);
-            this.city.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.city.Margin = new System.Windows.Forms.Padding(4);
             this.city.Name = "city";
             this.city.Size = new System.Drawing.Size(337, 30);
             this.city.TabIndex = 23;
@@ -240,7 +240,7 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(48, 281);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 155);
             this.panel1.TabIndex = 25;
@@ -260,7 +260,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(28, 46);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(273, 33);
             this.comboBox1.TabIndex = 0;
@@ -268,13 +268,13 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(556, 469);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(313, 35);
+            this.button1.Size = new System.Drawing.Size(337, 51);
             this.button1.TabIndex = 26;
-            this.button1.Text = "button1";
+            this.button1.Text = "Регистрация";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -282,6 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1189, 548);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -303,7 +304,7 @@
             this.Controls.Add(this.lastName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.firstName);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegForm";
             this.Text = "RegForm";
             this.panel1.ResumeLayout(false);

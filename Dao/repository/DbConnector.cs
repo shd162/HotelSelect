@@ -9,7 +9,7 @@ namespace HotelSelect.Dao.repository
         private readonly SqlConnection connection;
         private DbConnector()
         {
-            connection = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=hotel;" +
+            connection = new SqlConnection("Server=WinServerS\\SQLEXPRESS;Database=hotel;" +
                                            "Integrated Security=true; TrustServerCertificate=True;");
         }
 
