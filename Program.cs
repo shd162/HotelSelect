@@ -12,6 +12,7 @@ namespace HotelSelect
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
+        //fudhjdkskhwqqqqqqqqqqqqqqqqqqqqrqeeeeeeeojiwqrfjwjpdiiohfq
         static void Main()
         {
             Application.EnableVisualStyles();
