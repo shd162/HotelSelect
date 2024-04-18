@@ -34,19 +34,23 @@ namespace HotelSelect.Dao.impl
 
                 if (sqlDataReader.HasRows)
                 {
-                    User findedUser = new User();
+                    User findedUser = new User { FullName = new FullName() };
                     while (sqlDataReader.Read())
                     {
-                        findedUser.Id =          (long)sqlDataReader.GetValue(0);
-                        findedUser.FirstName =   (string)sqlDataReader.GetValue(1);
-                        findedUser.LastName =    (string)sqlDataReader.GetValue(2);
-                        findedUser.Age =         (DateTime)sqlDataReader.GetValue(3);
-                        findedUser.Login =       (string)sqlDataReader.GetValue(4);
-                        findedUser.Password =    (string)sqlDataReader.GetValue(5);
-                        findedUser.PhoneNumber = (string)sqlDataReader.GetValue(6);
-                        findedUser.Email =       (string)sqlDataReader.GetValue(7);
-                        findedUser.CountryId =   (long)sqlDataReader.GetValue(8);
-                        findedUser.CityId =      (int)sqlDataReader.GetValue(9);
+                        findedUser.Id =                  (long)sqlDataReader.GetValue(0);
+                        findedUser.CountryId =           (int)sqlDataReader.GetValue(1);
+                        findedUser.CityId =              (long)sqlDataReader.GetValue(2);
+                        findedUser.FullName = new FullName
+                        {
+                                               Surname = (string)sqlDataReader.GetValue(3),
+                                                  Name = (string)sqlDataReader.GetValue(4),
+                                            Patronymic = (string)sqlDataReader.GetValue(5)
+                        };
+                        findedUser.DateOfBirth =         (DateTime)sqlDataReader.GetValue(6);
+                        findedUser.Login =               (string)sqlDataReader.GetValue(7);
+                        findedUser.Password =            (string)sqlDataReader.GetValue(8);
+                        findedUser.PhoneNumber =         (string)sqlDataReader.GetValue(9);
+                        findedUser.Email =               (string)sqlDataReader.GetValue(10);
                     }
 
                     return findedUser;
@@ -67,19 +71,22 @@ namespace HotelSelect.Dao.impl
 
         public void SaveUser(User user)
         {
-            var sqlSaveUser = "INSERT INTO users (first_name, last_name, age, login, password, phone_number, email, country_id, city_id) " +
-                          "VALUES (@firstName, @lastName, @age, @login, @password, @phone_number, @email, @country_id, @city_id)";
+            var sqlSaveUser = "INSERT INTO users (country_id, city_id, surname, name, patronymic, date_of_birth, login, " +
+                "password, phone_number, email) " +
+                "VALUES (@country_id, @city_id, @surname, @name, @patronymic, @date_of_birth, @login, @password, " +
+                "@phone_number, @email)";
             
             var saveUserCommand = new SqlCommand(sqlSaveUser, dbConnector);
-            saveUserCommand.Parameters.Add("@firstName", System.Data.SqlDbType.VarChar).Value = user.FirstName;
-            saveUserCommand.Parameters.Add("@lastName", System.Data.SqlDbType.VarChar).Value = user.LastName;
-            saveUserCommand.Parameters.Add("@age", System.Data.SqlDbType.Date).Value = user.Age;
+            saveUserCommand.Parameters.Add("@country_id", System.Data.SqlDbType.Int).Value = user.CountryId;
+            saveUserCommand.Parameters.Add("@city_id", System.Data.SqlDbType.BigInt).Value = user.CityId;
+            saveUserCommand.Parameters.Add("@surname", System.Data.SqlDbType.VarChar).Value = user.FullName.Surname;
+            saveUserCommand.Parameters.Add("@name", System.Data.SqlDbType.VarChar).Value = user.FullName.Name;
+            saveUserCommand.Parameters.Add("@patronymic", System.Data.SqlDbType.VarChar).Value = user.FullName.Patronymic;
+            saveUserCommand.Parameters.Add("@date_of_birth", System.Data.SqlDbType.Date).Value = user.DateOfBirth;
             saveUserCommand.Parameters.Add("@login", System.Data.SqlDbType.VarChar).Value = user.Login;
             saveUserCommand.Parameters.Add("@password", System.Data.SqlDbType.VarChar).Value = user.Password;
             saveUserCommand.Parameters.Add("@phone_number", System.Data.SqlDbType.VarChar).Value = user.PhoneNumber;
             saveUserCommand.Parameters.Add("@email", System.Data.SqlDbType.VarChar).Value = user.Email;
-            saveUserCommand.Parameters.Add("@country_id", System.Data.SqlDbType.BigInt).Value = user.CountryId;
-            saveUserCommand.Parameters.Add("@city_id", System.Data.SqlDbType.BigInt).Value = user.CityId;
             
             try
             {

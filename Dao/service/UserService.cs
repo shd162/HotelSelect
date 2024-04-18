@@ -22,16 +22,15 @@ namespace HotelSelect.Dao.service
 
         public void SaveUser(User user)
         {
-            if (user.CheckFieldsOnNullOrEmpty())
-            {
-                userDao.SaveUser(user);
+            //if (user.CheckFieldsOnNullOrEmpty())
+            //{
+            //    userDao.SaveUser(user);
 
-                Console.WriteLine("hehehehhe");
-            }
-            else
-            {
-                MessageBox.Show("Введите данные");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Введите данные");
+            //}
         }
     }
 }

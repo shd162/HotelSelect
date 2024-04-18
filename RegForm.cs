@@ -27,17 +27,21 @@ namespace HotelSelect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User newUser = new User();
-            newUser.FirstName = firstName.Text;
-            newUser.LastName = lastName.Text;
-            newUser.Age = birthDay.Value;
-            newUser.Email = email.Text;
-            newUser.Login = login.Text;
-            newUser.Password = password.Text;
-            newUser.CityId = 1;
-            newUser.CountryId = 1;
-            newUser.PhoneNumber = phoneNumber.Text;
-            
+            User newUser = new User
+            {
+                FullName = new FullName
+                {
+                    Surname = Surname.Text,
+                    Name = Name.Text,
+                    Patronymic = Patronymic.Text,
+                },
+                DateOfBirth = DateOfBirth.Value,
+                Login = Login.Text,
+                Password = Password.Text,
+                PhoneNumber = PhoneNumber.Text,
+                Email = Email.Text,
+            };
+
             userService.SaveUser(newUser);
         }
     }
