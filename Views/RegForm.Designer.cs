@@ -38,20 +38,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.PhoneNumber = new System.Windows.Forms.TextBox();
+            this.PhoneNumberOrEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.TextBox();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.Country = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.City = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.role = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Patronymic = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.Countries = new System.Windows.Forms.ComboBox();
+            this.Cities = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,17 +143,17 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(417, 132);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 15);
+            this.label6.Size = new System.Drawing.Size(144, 15);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Номер телефон";
+            this.label6.Text = "Номер телефона/Email";
             // 
-            // PhoneNumber
+            // PhoneNumberOrEmail
             // 
-            this.PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneNumber.Location = new System.Drawing.Point(417, 151);
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.Size = new System.Drawing.Size(254, 26);
-            this.PhoneNumber.TabIndex = 16;
+            this.PhoneNumberOrEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhoneNumberOrEmail.Location = new System.Drawing.Point(417, 151);
+            this.PhoneNumberOrEmail.Name = "PhoneNumberOrEmail";
+            this.PhoneNumberOrEmail.Size = new System.Drawing.Size(254, 26);
+            this.PhoneNumberOrEmail.TabIndex = 16;
             // 
             // label7
             // 
@@ -191,14 +191,6 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Страна";
             // 
-            // Country
-            // 
-            this.Country.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Country.Location = new System.Drawing.Point(417, 274);
-            this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(254, 26);
-            this.Country.TabIndex = 21;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -208,14 +200,6 @@
             this.label9.Size = new System.Drawing.Size(42, 15);
             this.label9.TabIndex = 24;
             this.label9.Text = "Город";
-            // 
-            // City
-            // 
-            this.City.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.City.Location = new System.Drawing.Point(417, 333);
-            this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(254, 26);
-            this.City.TabIndex = 23;
             // 
             // panel1
             // 
@@ -254,7 +238,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(235, 28);
             this.button1.TabIndex = 26;
-            this.button1.Text = "button1";
+            this.button1.Text = "Зарегестирироваться";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -275,24 +259,40 @@
             this.label10.TabIndex = 28;
             this.label10.Text = "Отчество";
             // 
+            // Countries
+            // 
+            this.Countries.FormattingEnabled = true;
+            this.Countries.Location = new System.Drawing.Point(420, 273);
+            this.Countries.Name = "Countries";
+            this.Countries.Size = new System.Drawing.Size(251, 21);
+            this.Countries.TabIndex = 29;
+            // 
+            // Cities
+            // 
+            this.Cities.FormattingEnabled = true;
+            this.Cities.Location = new System.Drawing.Point(420, 341);
+            this.Cities.Name = "Cities";
+            this.Cities.Size = new System.Drawing.Size(251, 21);
+            this.Cities.TabIndex = 30;
+            // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 426);
+            this.Controls.Add(this.Cities);
+            this.Controls.Add(this.Countries);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Patronymic);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.City);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.Country);
             this.Controls.Add(this.DateOfBirth);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.PhoneNumber);
+            this.Controls.Add(this.PhoneNumberOrEmail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.label4);
@@ -302,7 +302,6 @@
             this.Controls.Add(this.Surname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Name);
-
             this.Text = "RegForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -325,18 +324,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox PhoneNumber;
+        private System.Windows.Forms.TextBox PhoneNumberOrEmail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox Country;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox City;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label role;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox Patronymic;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox Countries;
+        private System.Windows.Forms.ComboBox Cities;
     }
 }

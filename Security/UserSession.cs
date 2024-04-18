@@ -8,11 +8,6 @@ namespace HotelSelect.Security
         private User authUser;
         private static UserSession _instance;
 
-        private UserSession()
-        {
-            
-        }
-
         public static UserSession GetInstance()
         {
             if (_instance == null)
