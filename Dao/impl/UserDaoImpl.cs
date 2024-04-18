@@ -4,6 +4,7 @@ using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using HotelSelect.Dao.repository;
+using System.Collections.Generic;
 
 namespace HotelSelect.Dao.impl
 {
@@ -34,7 +35,7 @@ namespace HotelSelect.Dao.impl
 
                 if (sqlDataReader.HasRows)
                 {
-                    User findedUser = new User { FullName = new FullName() };
+                    User findedUser = new User ();
                     while (sqlDataReader.Read())
                     {
                         findedUser.Id =                  (long)sqlDataReader.GetValue(0);
