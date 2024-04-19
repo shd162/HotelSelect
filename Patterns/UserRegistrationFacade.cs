@@ -51,11 +51,11 @@ namespace HotelSelect.Patterns
             }
         }
 
-        public bool CheckFieldsComboBox(params dynamic[] comboBoxFields)
+        public bool CheckFieldsComboBox(dynamic comboBoxCountries, dynamic comboBoxCities)
         {
             try
             {
-                if (userValidator.CheckUserFieldsComboBox(comboBoxFields)) {
+                if (userValidator.CheckUserFieldsComboBox(comboBoxCountries, comboBoxCities)) {
                     return true;
                 }
                 else {
@@ -68,7 +68,7 @@ namespace HotelSelect.Patterns
             }
         }
 
-        public bool CheckUserFieldDateTime(DateTime dateTime)
+        public bool CheckUserFieldDateTime(dynamic dateTime)
         {
             try
             {

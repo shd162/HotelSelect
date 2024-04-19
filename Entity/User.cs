@@ -25,15 +25,6 @@ namespace HotelSelect.Entity
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-
-        private string phoneNumber;
-
-        public string PhoneNumber
-        {
-            get => phoneNumber;
-            set => phoneNumber = value;
-        }
-        
-        
+        public string PhoneNumber { get; set; }
     }
 }

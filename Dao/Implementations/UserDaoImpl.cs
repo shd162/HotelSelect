@@ -72,7 +72,10 @@ namespace HotelSelect.Dao.impl
 
         public void SaveUser(User user)
         {
-            var sqlSaveUser = "INSERT INTO users (country_id, city_id, surname, name, patronymic, date_of_birth, login, " +
+            try
+            {
+                dbConnector.Open();
+                var sqlSaveUser = "INSERT INTO Users (country_id, city_id, surname, name, patronymic, date_of_birth, login, " +
                 "password, phone_number, email) " +
                 "VALUES (@country_id, @city_id, @surname, @name, @patronymic, @date_of_birth, @login, @password, " +
                 "@phone_number, @email)";
@@ -88,11 +91,8 @@ namespace HotelSelect.Dao.impl
             saveUserCommand.Parameters.Add("@password", System.Data.SqlDbType.VarChar).Value = user.Password;
             saveUserCommand.Parameters.Add("@phone_number", System.Data.SqlDbType.VarChar).Value = user.PhoneNumber;
             saveUserCommand.Parameters.Add("@email", System.Data.SqlDbType.VarChar).Value = user.Email;
-            
-            try
-            {
-                dbConnector.Open();
-                saveUserCommand.ExecuteNonQuery();
+
+            saveUserCommand.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -102,7 +102,6 @@ namespace HotelSelect.Dao.impl
             {
                 dbConnector.Close();
             }
-            
         }
     }
 }

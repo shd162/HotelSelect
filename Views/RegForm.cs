@@ -31,20 +31,34 @@ namespace HotelSelect
 
             newUser = userRegistrationFacade.RegistrationFacade(PhoneNumberOrEmail.Text, newUser);
 
-            if (userRegistrationFacade.CheckFieldsStrings(Surname.Text, Name.Text, Patronymic.Text, Login.Text, Password.Text) &&
-                userRegistrationFacade.CheckFieldsComboBox(Countries, Cities) &&
-                userRegistrationFacade.CheckUserFieldDateTime(DateOfBirth.Value)) {
+            newUser.FullName = new FullName
+            {
+                Surname = Surname.Text,
+                Name = Name.Text,
+                Patronymic = Patronymic.Text,
+            };
+            newUser.DateOfBirth = DateOfBirth.Value;
+            newUser.Login = Login.Text;
+            newUser.Password = Password.Text;
+            newUser.CountryId = 0;
+            newUser.CityId = 0;
 
-                newUser.FullName = new FullName
-                {
-                    Surname = Surname.Text,
-                    Name = Name.Text,
-                    Patronymic = Patronymic.Text,
-                };
-                newUser.DateOfBirth = DateOfBirth.Value;
-                newUser.Login = Login.Text;
-                newUser.Password = Password.Text;
-            }
+            userRegistrationFacade.UserRegistration(newUser);
+
+            //if (userRegistrationFacade.CheckFieldsStrings(Surname.Text, Name.Text, Patronymic.Text, Login.Text, Password.Text) &&
+            //    userRegistrationFacade.CheckFieldsComboBox(Countries, Cities) &&
+            //    userRegistrationFacade.CheckUserFieldDateTime(DateOfBirth.Value)) {
+
+            //    newUser.FullName = new FullName
+            //    {
+            //        Surname = Surname.Text,
+            //        Name = Name.Text,
+            //        Patronymic = Patronymic.Text,
+            //    };
+            //    newUser.DateOfBirth = DateOfBirth.Value;
+            //    newUser.Login = Login.Text;
+            //    newUser.Password = Password.Text;
+            //}
 
 
 
@@ -113,18 +127,6 @@ namespace HotelSelect
             else
             {
                 label1.Visible = false;
-            }
-        }
-
-        private void Email_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(Email.Text))
-            {
-                label7.Visible = true;
-            }
-            else
-            {
-                label7.Visible = false;
             }
         }
 

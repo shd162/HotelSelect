@@ -10,7 +10,7 @@ namespace HotelSelect.Dao.inreface
     internal interface IUserValidator
     {
         bool CheckUserFieldsStrings(params string[] strings);
-        bool CheckUserFieldsComboBox(params string[] comboBoxes);
-        bool CheckUserFieldDateTime(DateTime dateTime);
+        bool CheckUserFieldsComboBox(dynamic comboBoxCountries, dynamic comboBoxCities);
+        bool CheckUserFieldDateTime(dynamic dateTime);
     }
 }

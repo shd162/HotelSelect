@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HotelSelect
 {
@@ -29,14 +30,36 @@ namespace HotelSelect
             }
         }
 
-        public bool CheckUserFieldsComboBox(params string[] comboBoxes)
+        public bool CheckUserFieldsComboBox(dynamic comboBoxCountries, dynamic comboBoxCities)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (comboBoxCountries.Items.Count == 0 || comboBoxCountries.SelectedItem) {
+                    throw new Exception();
+                }
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("Fields with strings - null or empty" + e.Message);
+            }
         }
 
-        public bool CheckUserFieldDateTime(DateTime dateTime)
+        public bool CheckUserFieldDateTime(dynamic dateTime)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (!dateTime.Checked || dateTime.Value == DateTime.MinValue) {
+                    throw new Exception();
+                }
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("Fields with strings - null or empty" + e.Message);
+            }
         }
     }
 }

@@ -21,12 +21,14 @@ namespace HotelSelect.Patterns
                 if (text.Contains(".com") || text.Contains(".ru")) {
                     ImplUserValidatorViaEmail implUserValidatorViaEmail = new ImplUserValidatorViaEmail();
                     user.Email = implUserValidatorViaEmail.CheckUserEmail(text);
+                    user.PhoneNumber = null;
 
                     return implUserValidatorViaEmail;
                 }
                 else if (text.Any(char.IsDigit)) {
                     ImplUserValidatorViaPhone implUserValidatorViaPhone = new ImplUserValidatorViaPhone();
                     user.PhoneNumber = implUserValidatorViaPhone.CheckUserPhoneNumber(text);
+                    user.Email = null;
 
                     return implUserValidatorViaPhone;
                 }
