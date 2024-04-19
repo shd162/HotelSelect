@@ -148,13 +148,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dataBase\" />
+    <Folder Include="res\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Creat Hotel.jpg" />
-    <Content Include="Images\eye-visible.png" />
-    <Content Include="Images\not-visible.png" />
-    <Content Include="Images\translucent-image.png" />
-    <Content Include="Images\zero-trust.jpg" />
+    <Content Include="res\Images\Creat Hotel.jpg" />
+    <Content Include="res\Images\eye-visible.png" />
+    <Content Include="res\Images\not-visible.png" />
+    <Content Include="res\Images\translucent-image.png" />
+    <Content Include="res\Images\zero-trust.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
