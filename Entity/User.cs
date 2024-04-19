@@ -27,13 +27,13 @@ namespace HotelSelect.Entity
         public string Email { get; set; }
 
         private string phoneNumber;
+
         public string PhoneNumber
         {
-            get { return phoneNumber; }
-            set
-            {
-
-            }
+            get => phoneNumber;
+            set => phoneNumber = value;
         }
+        
+        
     }
 }
