@@ -44,6 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,9 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(33, 225);
+            this.textBox4.MaxLength = 5;
             this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '⭐';
             this.textBox4.Size = new System.Drawing.Size(175, 34);
             this.textBox4.TabIndex = 10;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -116,9 +119,9 @@
             // 
             this.AddHotel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.AddHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddHotel.Location = new System.Drawing.Point(666, 408);
+            this.AddHotel.Location = new System.Drawing.Point(655, 408);
             this.AddHotel.Name = "AddHotel";
-            this.AddHotel.Size = new System.Drawing.Size(178, 83);
+            this.AddHotel.Size = new System.Drawing.Size(189, 83);
             this.AddHotel.TabIndex = 14;
             this.AddHotel.Text = "Добавление отеля";
             this.AddHotel.UseVisualStyleBackColor = false;
@@ -214,11 +217,20 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(517, 128);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 21;
+            // 
             // HotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 530);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -259,5 +271,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
