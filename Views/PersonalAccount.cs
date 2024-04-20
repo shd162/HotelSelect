@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace HotelSelect
 {
-    public partial class Reserv : Form
+    public partial class PersonalAccount : Form
     {
-        public Reserv()
+        public PersonalAccount()
         {
             InitializeComponent();
         }
-
-       
     }
 }

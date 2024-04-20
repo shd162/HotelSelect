@@ -2,7 +2,7 @@
 
 namespace HotelSelect.Dao.inreface
 {
-    public interface IRoleDao
+    internal interface IRoleUserDAO
     {
         void setUserRole();
     }

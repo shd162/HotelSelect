@@ -5,30 +5,31 @@ namespace HotelSelect.Security
 {
     public class UserSession
     {
-        private User authUser;
-        private static UserSession _instance;
+        private static UserSession instance;
+        public User CurrentAuthUser { get; private set; }
 
-        public static UserSession GetInstance()
+        private UserSession(User user)
         {
-            if (_instance == null)
-            {
-                _instance = new UserSession();
+            CurrentAuthUser = user;
+        }
+
+        public static UserSession StartSession(User user)
+        {
+            if (instance == null) {
+                instance = new UserSession(user);
             }
-            return _instance;
-        }
-        public void SaveUserSession(User user)
-        {
-            authUser = user;
+
+            return instance;
         }
 
-        public void DestroySession()
+        public static void EndSession()
         {
-            authUser = null;
+            instance = null;
         }
 
-        public User getUser()
+        public static UserSession GetCurrentSession()
         {
-            return authUser;
+            return instance;
         }
     }
 }

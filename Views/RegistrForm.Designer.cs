@@ -1,6 +1,6 @@
 ﻿namespace HotelSelect
 {
-    partial class RegForm
+    partial class RegistrForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.role = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Registration = new System.Windows.Forms.Button();
             this.Patronymic = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Countries = new System.Windows.Forms.ComboBox();
@@ -193,7 +193,6 @@
             this.DateOfBirth.Size = new System.Drawing.Size(257, 26);
             this.DateOfBirth.TabIndex = 20;
             this.DateOfBirth.Value = new System.DateTime(2024, 4, 19, 0, 0, 0, 0);
-            this.DateOfBirth.ValueChanged += new System.EventHandler(this.DateOfBirth_ValueChanged);
             // 
             // panel1
             // 
@@ -226,17 +225,17 @@
             this.comboBox1.Size = new System.Drawing.Size(206, 28);
             this.comboBox1.TabIndex = 0;
             // 
-            // button1
+            // Registration
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(416, 322);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(253, 44);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Зарегестририроваться";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Registration.BackColor = System.Drawing.Color.Teal;
+            this.Registration.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Registration.Location = new System.Drawing.Point(416, 322);
+            this.Registration.Name = "Registration";
+            this.Registration.Size = new System.Drawing.Size(253, 44);
+            this.Registration.TabIndex = 26;
+            this.Registration.Text = "Зарегестририроваться";
+            this.Registration.UseVisualStyleBackColor = false;
+            this.Registration.Click += new System.EventHandler(this.Registration_Click);
             // 
             // Patronymic
             // 
@@ -315,14 +314,14 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::HotelSelect.Properties.Resources.translucent_image;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(892, 426);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
-            // RegForm
+            // RegistrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -334,7 +333,7 @@
             this.Controls.Add(this.Countries);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Patronymic);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Registration);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DateOfBirth);
             this.Controls.Add(this.label6);
@@ -349,7 +348,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Name);
             this.Controls.Add(this.pictureBox1);
-            this.Load += new System.EventHandler(this.RegForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -358,7 +357,7 @@
 
         }
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Registration;
 
         #endregion
 

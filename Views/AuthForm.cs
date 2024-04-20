@@ -10,32 +10,32 @@ namespace HotelSelect
 {
     public partial class AuthForm : Form
     {
-        private readonly IUserDao userService = new UserService();
         public AuthForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Registration_Click(object sender, EventArgs e)
         {
-            RegForm rf = new RegForm();
-            rf.Show();
+            RegistrForm registrationForm = new RegistrForm();
+            registrationForm.Hide();
+
+            if (registrationForm.ShowDialog() == DialogResult.Cancel) { this.Show(); }
         }
 
         private void authBtn_Click(object sender, EventArgs e)
         {
 
-            if (!String.IsNullOrEmpty(login.Text) && !String.IsNullOrEmpty(password.Text))
-            {
+            if (!String.IsNullOrEmpty(login.Text) && !String.IsNullOrEmpty(password.Text)) {
+
                 User user = new User();
                 user.Login = login.Text;
                 user.Password = password.Text;
 
                 Security.Security sec = new Security.Security();
 
-                if (sec.AuthUser(user))
-                {
-                    HotelForm  CreateHotel= new HotelForm();
+                if (sec.AuthUser(user)) {
+                    HotelAdd  CreateHotel= new HotelAdd();
                     CreateHotel.ShowDialog();
                 }
                 

@@ -12,24 +12,33 @@ using HotelSelect.Dao.inreface;
 using HotelSelect.Dao.service;
 using HotelSelect.Entity;
 using HotelSelect.Patterns;
+using HotelSelect.Security;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace HotelSelect
 {
-    public partial class RegForm : Form
+    public partial class RegistrForm : Form
     {
-        private IUserDao userService = new UserService();
-        UserRegistrationFacade userRegistrationFacade = new UserRegistrationFacade();
+        FacadeRegistrUser facadeRegistrUser = new FacadeRegistrUser();
 
-        public RegForm()
+        public RegistrForm()
         {
-            InitializeComponent();   
+            InitializeComponent();  
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Registration_Click(object sender, EventArgs e)
         {
             User newUser = new User();
 
-            newUser = userRegistrationFacade.RegistrationFacade(PhoneNumberOrEmail.Text, newUser);
+            if (!facadeRegistrUser.CheckFieldsStrings(Surname.Text, Name.Text, Patronymic.Text, Login.Text, Password.Text) && 
+                !facadeRegistrUser.CheckFieldsComboBox(Countries, Cities) &&
+                !facadeRegistrUser.CheckUserFieldDateTime(DateOfBirth)) {
+
+                MessageBox.Show("User failed varification");
+                return;
+            }
+
+            newUser = facadeRegistrUser.RegistrationFacade(PhoneNumberOrEmail.Text, newUser);
 
             newUser.FullName = new FullName
             {
@@ -40,34 +49,18 @@ namespace HotelSelect
             newUser.DateOfBirth = DateOfBirth.Value;
             newUser.Login = Login.Text;
             newUser.Password = Password.Text;
-            newUser.CountryId = 0;
-            newUser.CityId = 0;
+            newUser.CountryId = 1;
+            newUser.CityId = 1;
 
-            userRegistrationFacade.UserRegistration(newUser);
+            if (!facadeRegistrUser.CheckExistData(newUser)) {
+                MessageBox.Show("User already exist");
+                return;
+            }
 
-            //if (userRegistrationFacade.CheckFieldsStrings(Surname.Text, Name.Text, Patronymic.Text, Login.Text, Password.Text) &&
-            //    userRegistrationFacade.CheckFieldsComboBox(Countries, Cities) &&
-            //    userRegistrationFacade.CheckUserFieldDateTime(DateOfBirth.Value)) {
+            facadeRegistrUser.RegistrationUser(newUser);
 
-            //    newUser.FullName = new FullName
-            //    {
-            //        Surname = Surname.Text,
-            //        Name = Name.Text,
-            //        Patronymic = Patronymic.Text,
-            //    };
-            //    newUser.DateOfBirth = DateOfBirth.Value;
-            //    newUser.Login = Login.Text;
-            //    newUser.Password = Password.Text;
-            //}
-
-
-
-
-        }
-
-        private void RegForm_Load(object sender, EventArgs e)
-        {
-
+            PersonalAccount personalAccount = new PersonalAccount();
+            this.Close();
         }
 
         private void Patronymic_TextChanged(object sender, EventArgs e)
@@ -166,9 +159,9 @@ namespace HotelSelect
             }
         }
 
-        private void DateOfBirth_ValueChanged(object sender, EventArgs e)
+        private void RegistrForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
