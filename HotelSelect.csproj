@@ -70,51 +70,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dao\Implementations\ImplUserValidatorViaEmail.cs" />
-    <Compile Include="Dao\Implementations\ImplChecksStringsComboBoxDateTimeViaRegistr.cs" />
-    <Compile Include="Patterns\UserRegistrationFacade.cs" />
-    <Compile Include="Patterns\UserValidatorFactory.cs" />
+    <Compile Include="Connections\ConnectorDataBaseMicrosoftSQL.cs" />
+    <Compile Include="DataAccessObject\Interfaces\IServiceDAO.cs" />
+    <Compile Include="DataAccessObject\Services\UniversalMethodsCheckIsEmptyAndSelected.cs" />
+    <Compile Include="DataAccessObject\Services\VerificationUserForAuth.cs" />
+    <Compile Include="Views\PersonalAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PersonalAccount.Designer.cs">
+      <DependentUpon>PersonalAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\Patterns\FacadeRegistrUser.cs" />
+    <Compile Include="Registration\Patterns\FactoryRegistrUser.cs" />
     <Compile Include="Views\AuthForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dao\Implementations\ImplUserValidatorViaPhone.cs" />
-    <Compile Include="Dao\Implementations\UserDaoImpl.cs" />
-    <Compile Include="Dao\Interfaces\IRoleDao.cs" />
-    <Compile Include="Dao\Interfaces\IUserDao.cs" />
-    <Compile Include="Dao\Interfaces\IUserValidator.cs" />
-    <Compile Include="Dao\Connections\DbConnector.cs" />
-    <Compile Include="Dao\Services\UserService.cs" />
-    <Compile Include="Entity\User.cs" />
-    <Compile Include="HotelForm.cs">
+    <Compile Include="DataAccessObject\Implementations\ImplUserDAO.cs" />
+    <Compile Include="DataAccessObject\Interfaces\IRoleUserDAO.cs" />
+    <Compile Include="DataAccessObject\Interfaces\IUserDAO.cs" />
+    <Compile Include="DataAccessObject\Services\VerificationsUserForRegistr.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Views\HotelAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HotelForm.Designer.cs">
-      <DependentUpon>HotelForm.cs</DependentUpon>
+    <Compile Include="Views\HotelAdd.Designer.cs">
+      <DependentUpon>HotelAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\RegForm.cs">
+    <Compile Include="Views\RegistrForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\RegForm.Designer.cs">
-      <DependentUpon>RegForm.cs</DependentUpon>
+    <Compile Include="Views\RegistrForm.Designer.cs">
+      <DependentUpon>RegistrForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reserv.cs">
+    <Compile Include="Views\HotelRoomReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Reserv.Designer.cs">
-      <DependentUpon>Reserv.cs</DependentUpon>
+    <Compile Include="Views\HotelRoomReservation.Designer.cs">
+      <DependentUpon>HotelRoomReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Security\Security.cs" />
     <Compile Include="Security\UserSession.cs" />
     <EmbeddedResource Include="Views\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HotelForm.resx">
-      <DependentUpon>HotelForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\HotelAdd.resx">
+      <DependentUpon>HotelAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,11 +131,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\RegForm.resx">
-      <DependentUpon>RegForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\RegistrForm.resx">
+      <DependentUpon>RegistrForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reserv.resx">
-      <DependentUpon>Reserv.cs</DependentUpon>
+    <EmbeddedResource Include="Views\HotelRoomReservation.resx">
+      <DependentUpon>HotelRoomReservation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -147,15 +152,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="dataBase\" />
-    <Folder Include="res\" />
+    <Folder Include="DataBase\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="res\Images\Creat Hotel.jpg" />
-    <Content Include="res\Images\eye-visible.png" />
-    <Content Include="res\Images\not-visible.png" />
-    <Content Include="res\Images\translucent-image.png" />
-    <Content Include="res\Images\zero-trust.jpg" />
+    <Content Include="Resources\Images\Creat Hotel.jpg" />
+    <Content Include="Resources\Images\eye-visible.png" />
+    <Content Include="Resources\Images\not-visible.png" />
+    <Content Include="Resources\Images\translucent-image.png" />
+    <Content Include="Resources\Images\zero-trust.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

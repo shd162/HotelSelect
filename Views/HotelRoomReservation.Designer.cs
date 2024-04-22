@@ -1,6 +1,6 @@
 ﻿namespace HotelSelect
 {
-    partial class Reserv
+    partial class HotelRoomReservation
     {
         /// <summary>
         /// Required designer variable.

@@ -63,6 +63,16 @@ namespace HotelSelect.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Creat_Hotel {
+            get {
+                object obj = ResourceManager.GetObject("Creat Hotel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_visible {
             get {
                 object obj = ResourceManager.GetObject("eye-visible", resourceCulture);

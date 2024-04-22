@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HotelSelect.Entity
 {
@@ -25,15 +19,6 @@ namespace HotelSelect.Entity
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-
-        private string phoneNumber;
-
-        public string PhoneNumber
-        {
-            get => phoneNumber;
-            set => phoneNumber = value;
-        }
-        
-        
+        public string PhoneNumber { get; set; }
     }
 }
