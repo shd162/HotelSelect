@@ -71,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connections\ConnectorDataBaseMicrosoftSQL.cs" />
+    <Compile Include="DataAccessObject\Interfaces\IServiceDAO.cs" />
+    <Compile Include="DataAccessObject\Services\UniversalMethodsCheckIsEmptyAndSelected.cs" />
+    <Compile Include="DataAccessObject\Services\VerificationUserForAuth.cs" />
     <Compile Include="Views\PersonalAccount.cs">
       <SubType>Form</SubType>
     </Compile>

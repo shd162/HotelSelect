@@ -1,42 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelSelect.Dao.impl;
-using HotelSelect.Dao.inreface;
-using HotelSelect.Dao.service;
+using HotelSelect.DataAccessObject.Services;
 using HotelSelect.Entity;
 using HotelSelect.Patterns;
-using HotelSelect.Security;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace HotelSelect
 {
     public partial class RegistrForm : Form
     {
-        FacadeRegistrUser facadeRegistrUser = new FacadeRegistrUser();
+        bool clickForDateTimePicker;
 
         public RegistrForm()
         {
-            InitializeComponent();  
+            InitializeComponent();
+
+            DateTimePicker dateTimePicker1 = new DateTimePicker();
+            dateTimePicker1.ValueChanged += DateOfBirth_ValueChanged;
         }
 
         private void Registration_Click(object sender, EventArgs e)
         {
             User newUser = new User();
 
-            if (!facadeRegistrUser.CheckFieldsStrings(Surname.Text, Name.Text, Patronymic.Text, Login.Text, Password.Text) && 
-                !facadeRegistrUser.CheckFieldsComboBox(Countries, Cities) &&
-                !facadeRegistrUser.CheckUserFieldDateTime(DateOfBirth)) {
-
-                MessageBox.Show("User failed varification");
+            if (!UniversalMethodsCheckIsEmptyAndSelected.CheckStringsIsNullOfEmpty(Surname.Text, Name.Text, Patronymic.Text, 
+                Login.Text, Password.Text) || !CheckDateTimePickerClicked()) {
                 return;
             }
+            //else if (!UniversalMethodsCheckIsEmptyAndSelected.CheckComboBoxesIsSelected(Countries, Cities))
+            //{
+            //    MessageBox.Show("ComboBoxes no selected");
+            //    return;
+            //}
+
+            FacadeRegistrUser facadeRegistrUser = new FacadeRegistrUser();
 
             newUser = facadeRegistrUser.RegistrationFacade(PhoneNumberOrEmail.Text, newUser);
 
@@ -52,7 +48,7 @@ namespace HotelSelect
             newUser.CountryId = 1;
             newUser.CityId = 1;
 
-            if (!facadeRegistrUser.CheckExistData(newUser)) {
+            if (!facadeRegistrUser.CheckExistUser(newUser)) {
                 MessageBox.Show("User already exist");
                 return;
             }
@@ -65,7 +61,7 @@ namespace HotelSelect
 
         private void Patronymic_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Patronymic.Text))
+            if (string.IsNullOrEmpty(Patronymic.Text))
             {
                 label10.Visible = true;
             }
@@ -77,7 +73,7 @@ namespace HotelSelect
 
         private void Login_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Login.Text))
+            if (string.IsNullOrEmpty(Login.Text))
             {
                 label4.Visible = true;
             }
@@ -89,7 +85,7 @@ namespace HotelSelect
 
         private void Password_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Password.Text))
+            if (string.IsNullOrEmpty(Password.Text))
             {
                 label5.Visible = true;
             }
@@ -101,7 +97,7 @@ namespace HotelSelect
 
         private void PhoneNumberOrEmail_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(PhoneNumberOrEmail.Text))
+            if (string.IsNullOrEmpty(PhoneNumberOrEmail.Text))
             {
                 label6.Visible = true;
             }
@@ -113,7 +109,7 @@ namespace HotelSelect
 
         private void Name_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Name.Text))
+            if (string.IsNullOrEmpty(Name.Text))
             {
                 label1.Visible = true;
             }
@@ -125,7 +121,7 @@ namespace HotelSelect
 
         private void Countries_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Countries.Text))
+            if (string.IsNullOrEmpty(Countries.Text))
             {
                 label8.Visible = true;
             }
@@ -137,9 +133,9 @@ namespace HotelSelect
 
         private void Cities_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(Cities.Text))
+            if (string.IsNullOrEmpty(Cities.Text))
             {
-                label9.Visible = true;
+                label9.Visible =  true;
             }
             else
             {
@@ -149,7 +145,7 @@ namespace HotelSelect
 
         private void Surname_TextChanged(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(Surname.Text))
+            if (string.IsNullOrEmpty(Surname.Text))
             {
                 label2.Visible = true;
             }
@@ -157,6 +153,23 @@ namespace HotelSelect
             {
                 label2.Visible = false;
             }
+        }
+
+        private void DateOfBirth_ValueChanged(object sender, EventArgs e)
+        {
+            clickForDateTimePicker = true;
+        }
+
+        private bool CheckDateTimePickerClicked()
+        {
+            bool isClicked = false;
+
+            if (clickForDateTimePicker)
+            {
+                isClicked = true;
+            }
+
+            return isClicked;
         }
 
         private void RegistrForm_FormClosing(object sender, FormClosingEventArgs e)

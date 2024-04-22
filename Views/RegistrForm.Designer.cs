@@ -193,6 +193,7 @@
             this.DateOfBirth.Size = new System.Drawing.Size(257, 26);
             this.DateOfBirth.TabIndex = 20;
             this.DateOfBirth.Value = new System.DateTime(2024, 4, 19, 0, 0, 0, 0);
+            this.DateOfBirth.ValueChanged += new System.EventHandler(this.DateOfBirth_ValueChanged);
             // 
             // panel1
             // 

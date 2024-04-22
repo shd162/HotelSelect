@@ -1,7 +1,5 @@
-﻿using System;
-using HotelSelect.Dao.impl;
+﻿using HotelSelect.Dao.impl;
 using HotelSelect.Dao.inreface;
-using HotelSelect.Dao.service;
 using HotelSelect.Entity;
 
 namespace HotelSelect.Security
@@ -23,7 +21,7 @@ namespace HotelSelect.Security
             return false;
         }
 
-        public void LogOutUser()
+        public static void LogOutUser()
         {
             UserSession.EndSession();
         }

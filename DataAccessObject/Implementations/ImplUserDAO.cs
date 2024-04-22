@@ -4,7 +4,7 @@ using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using HotelSelect.Dao.repository;
-using System.Collections.Generic;
+using System.Data;
 
 namespace HotelSelect.Dao.impl
 {
@@ -21,9 +21,9 @@ namespace HotelSelect.Dao.impl
         {
             sqlConnection.Open();
 
-            var sqlRequestFindUser = "SELECT * FROM users WHERE login = @login AND password = @password";
+            string sqlQueryFindUser = "SELECT * FROM Users WHERE login = @login AND password = @password";
 
-            SqlCommand sqlCommandFindUser = new SqlCommand(sqlRequestFindUser, sqlConnection);
+            SqlCommand sqlCommandFindUser = new SqlCommand(sqlQueryFindUser, sqlConnection);
 
             sqlCommandFindUser.Parameters.Add("@login", System.Data.SqlDbType.VarChar).Value = user.Login;
             sqlCommandFindUser.Parameters.Add("@password", System.Data.SqlDbType.VarChar).Value = user.Password;
@@ -62,28 +62,29 @@ namespace HotelSelect.Dao.impl
 
         public void SaveUser(User user)
         {
-            var sqlSaveUser = "INSERT INTO Users (country_id, city_id, surname, name, patronymic, date_of_birth, login, " +
-            "password, phone_number, email) " +
-            "VALUES (@country_id, @city_id, @surname, @name, @patronymic, @date_of_birth, @login, @password, " +
-            "@phone_number, @email)";
-
-            SqlCommand saveUserCommand = new SqlCommand(sqlSaveUser, sqlConnection);
-
-            saveUserCommand.Parameters.Add("@country_id", System.Data.SqlDbType.Int).Value =       user.CountryId;
-            saveUserCommand.Parameters.Add("@city_id", System.Data.SqlDbType.BigInt).Value =       user.CityId;
-            saveUserCommand.Parameters.Add("@surname", System.Data.SqlDbType.VarChar).Value =      user.FullName.Surname;
-            saveUserCommand.Parameters.Add("@name", System.Data.SqlDbType.VarChar).Value =         user.FullName.Name;
-            saveUserCommand.Parameters.Add("@patronymic", System.Data.SqlDbType.VarChar).Value =   user.FullName.Patronymic;
-            saveUserCommand.Parameters.Add("@date_of_birth", System.Data.SqlDbType.Date).Value =   user.DateOfBirth;
-            saveUserCommand.Parameters.Add("@login", System.Data.SqlDbType.VarChar).Value =        user.Login;
-            saveUserCommand.Parameters.Add("@password", System.Data.SqlDbType.VarChar).Value =     user.Password;
-            saveUserCommand.Parameters.Add("@phone_number", System.Data.SqlDbType.VarChar).Value = user.PhoneNumber;
-            saveUserCommand.Parameters.Add("@email", System.Data.SqlDbType.VarChar).Value =        user.Email;
-
             try
             {
                 sqlConnection.Open();
-                saveUserCommand.ExecuteNonQuery();
+
+                string sqlQuerySaveUser = "INSERT INTO Users (country_id, city_id, surname, name, patronymic, date_of_birth, " +
+                                          "login, password, phone_number, email) " +
+                                          "VALUES (@country_id, @city_id, @surname, @name, @patronymic, @date_of_birth, @login, " +
+                                          "@password, @phone_number, @email)";
+
+                SqlCommand sqlCommandSaveUser = new SqlCommand(sqlQuerySaveUser, sqlConnection);
+
+                sqlCommandSaveUser.Parameters.Add("@country_id", System.Data.SqlDbType.Int).Value = user.CountryId;
+                sqlCommandSaveUser.Parameters.Add("@city_id", System.Data.SqlDbType.BigInt).Value = user.CityId;
+                sqlCommandSaveUser.Parameters.Add("@surname", System.Data.SqlDbType.VarChar).Value = user.FullName.Surname;
+                sqlCommandSaveUser.Parameters.Add("@name", System.Data.SqlDbType.VarChar).Value = user.FullName.Name;
+                sqlCommandSaveUser.Parameters.Add("@patronymic", System.Data.SqlDbType.VarChar).Value = user.FullName.Patronymic;
+                sqlCommandSaveUser.Parameters.Add("@date_of_birth", System.Data.SqlDbType.Date).Value = user.DateOfBirth;
+                sqlCommandSaveUser.Parameters.Add("@login", System.Data.SqlDbType.VarChar).Value = user.Login;
+                sqlCommandSaveUser.Parameters.Add("@password", System.Data.SqlDbType.VarChar).Value = user.Password;
+                sqlCommandSaveUser.Parameters.Add("@phone_number", System.Data.SqlDbType.VarChar).Value = user.PhoneNumber;
+                sqlCommandSaveUser.Parameters.Add("@email", System.Data.SqlDbType.VarChar).Value = user.Email;
+
+                sqlCommandSaveUser.ExecuteNonQuery();
             }
             catch (Exception e)
             {

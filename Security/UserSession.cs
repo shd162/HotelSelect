@@ -1,5 +1,4 @@
-﻿using System.Dynamic;
-using HotelSelect.Entity;
+﻿using HotelSelect.Entity;
 
 namespace HotelSelect.Security
 {

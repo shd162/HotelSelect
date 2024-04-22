@@ -1,6 +1,4 @@
-﻿using HotelSelect.Entity;
-
-namespace HotelSelect.Dao.inreface
+﻿namespace HotelSelect.Dao.inreface
 {
     internal interface IRoleUserDAO
     {
