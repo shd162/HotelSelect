@@ -1,39 +1,34 @@
-﻿using System.Dynamic;
-using HotelSelect.Entity;
+﻿using HotelSelect.Entity;
 
 namespace HotelSelect.Security
 {
     public class UserSession
     {
-        private User authUser;
-        private static UserSession _instance;
+        private static UserSession instance;
+        public User CurrentAuthUser { get; private set; }
 
-        private UserSession()
+        private UserSession(User user)
         {
-            
+            CurrentAuthUser = user;
         }
 
-        public static UserSession GetInstance()
+        public static UserSession StartSession(User user)
         {
-            if (_instance == null)
-            {
-                _instance = new UserSession();
+            if (instance == null) {
+                instance = new UserSession(user);
             }
-            return _instance;
-        }
-        public void SaveUserSession(User user)
-        {
-            authUser = user;
+
+            return instance;
         }
 
-        public void DestroySession()
+        public static void EndSession()
         {
-            authUser = null;
+            instance = null;
         }
 
-        public User getUser()
+        public static UserSession GetCurrentSession()
         {
-            return authUser;
+            return instance;
         }
     }
 }
